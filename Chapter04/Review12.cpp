@@ -13,7 +13,7 @@ int main() {
 	for (int i=0; i<10; i++)
 		treacle[i] = i*1.1;
 
-	float * p_treacle = &treacle[0];
+	float * p_treacle = &treacle[0];  // float * p_treacle = treacle;
 
 	cout << "treacle[0] = " << *p_treacle << endl;
 
