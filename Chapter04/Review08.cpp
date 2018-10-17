@@ -15,7 +15,8 @@ struct fish
 int main() {
 	using namespace std;
 
-	fish a1{
+	fish a1 =
+	{
 		"bigfish",
 		45,
 		89.3
