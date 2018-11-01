@@ -9,10 +9,20 @@ envy finagle geometry done for sure
 You entered a total of 7 words.
 */
 #include <iostream>
-
+#include <cstring>
+const int ArSize = 20;
 int main()
 {
     using namespace std;
+    char word[ArSize];
+    int count = 0;
+
+    cin >> word;
+    while (strcmp(word, "done")) {
+    	count++;
+    	cin >> word;
+    }
+    cout << "You entered a total of " << count << " words.\n";
 
 	return 0;
 }
