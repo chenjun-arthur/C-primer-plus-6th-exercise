@@ -110,7 +110,8 @@ int main()
                        else {
                            st.pop(po);
                            cout << "PO #" << po.fullname << " popped\n";
-                           total += po.
+                           total += po.payment;
+                           cout << "Total: " << total << "\n";
                        }
                        break;
         }
