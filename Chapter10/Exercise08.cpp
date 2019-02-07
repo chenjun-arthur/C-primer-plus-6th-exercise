@@ -22,3 +22,62 @@ Here pf points to a function (not a member function) that takes a reference to I
 argument, where Item is the type for items in the list.The visit() function applies
 this function to each item in the list.You can use the Stack class as a general guide.
 */
+#include <iostream>
+
+typedef int Item;
+
+class List
+{
+private:
+	enum {MAX = 10};
+	Item items[MAX];
+	int top;
+public:
+	List();
+	~List() {};
+	bool isempty() const;
+	bool isfull() const;
+	bool add(const Item &item);
+	void visit(void (*pf)(Item &item));
+};
+
+List::List() { top = 0; }
+
+bool List::isempty() const { return top == 0; }
+
+bool List::isfull() const { return top == MAX; }
+
+bool List::add(const Item &item) {
+	if (top < MAX) {
+		items[top++] = item;
+		return true;
+	}
+	else 
+		return false;
+}
+
+void List::visit(void (*pf)(Item &item)) {
+	if (isempty())
+	{
+		std::cout << "List is empty!\n";
+		return;
+	}
+
+	for (int i = 0; i < top; ++i)
+	{
+		pf(items[i]);
+	}
+}
+
+void show(Item &item) {
+	using std::cout;
+	cout << item << "\n";
+}
+
+int main() {
+	List list;
+	// list.add(1);
+	// list.add(2);
+	list.visit(show);
+	return 0;
+}
