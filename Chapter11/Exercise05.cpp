@@ -10,7 +10,7 @@ Test your class with a short program that uses all the class methods and friends
 // compile with stonewt.cpp
 #include <iostream>
 using std::cout;
-#include "stonewt.h"
+#include "ex05stonewt.h"
 void display(const Stonewt & st, int n);
 int main()
 {
