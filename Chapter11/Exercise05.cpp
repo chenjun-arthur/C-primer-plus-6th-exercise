@@ -18,22 +18,26 @@ int main()
     Stonewt wolfe(285.7);    // same as Stonewt wolfe = 285.7;
     Stonewt taft(21, 8);
 
-    cout << "The celebrity weighed ";
-    incognito.show_stn();
-    cout << "The detective weighed ";
-    wolfe.show_stn();
-    cout << "The President weighed ";
-    taft.show_lbs();
-    incognito = 276.8;      // uses constructor for conversion
-    taft = 325;             // same as taft = Stonewt(325);
-    cout << "After dinner, the celebrity weighed ";
-    incognito.show_stn();
-    cout << "After dinner, the President weighed ";
-    taft.show_lbs();
+    incognito.stoneMode();
+    cout << "The celebrity weighed " << incognito << "\n";
+
+    wolfe.stoneMode();
+    cout << "The detective weighed " << wolfe << "\n";
+
+    cout << "The President weighed " << taft << "\n";
+
+    incognito = Stonewt(276.8, Stonewt::STONE);
+    taft = Stonewt(325, Stonewt::IPOUND);             // same as taft = Stonewt(325);
+    cout << "After dinner, the celebrity weighed " << incognito << "\n";
+    cout << "After dinner, the President weighed " << taft << "\n";
     display(taft, 2);
     cout << "The wrestler weighed even more.\n";
     display(422, 2);
     cout << "No stone left unearned\n";
+
+    cout << "After 2 times, incognito weighed " << incognito * 2 << "\n";
+    cout << "When added, together weighed " << incognito + taft << "\n";
+    cout << "After 1.5 times, taft weighed " <<  1.5 * taft << "\n";
     // std::cin.get();
     return 0;
 }
@@ -42,7 +46,6 @@ void display(const Stonewt & st, int n)
 {
     for (int i = 0; i < n; i++)
     {
-        cout << "Wow! ";
-        st.show_stn();
+        cout << "Wow! " << st;
     }
 }
