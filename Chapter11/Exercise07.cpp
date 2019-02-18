@@ -9,7 +9,7 @@ operations:
 	n Multiplication: (x a real number): x × c = (x×C,x×Di)
 	n Conjugation: ~a = (A, - Bi)
 Define a complex class so that the following program can use it with correct
-results:
+results:*/
 #include <iostream>
 using namespace std;
 #include "complex0.h" // to avoid confusion with complex.h
@@ -33,6 +33,7 @@ int main()
 	return 0;
 }
 
+/*
 Note that you have to overload the << and >> operators. Standard C++ already has
 complex support—rather more extensive than in this example—in a complex
 header file, so use complex0.h to avoid conflicts. Use const whenever warranted.
