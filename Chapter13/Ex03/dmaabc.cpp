@@ -48,6 +48,10 @@ baseDMA & baseDMA::operator=(const baseDMA & rs)
     return *this;
 }
 
+void baseDMA::View() const {
+    abcDMA::View();
+}
+
 // lacksDMA methods
 lacksDMA::lacksDMA(const char * c, const char * l, int r)
     : abcDMA(l, r)

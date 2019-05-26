@@ -12,7 +12,7 @@ private:
 public:
     abcDMA(const char * l = "null", int r = 0);
     abcDMA(const abcDMA & rs);
-    virtual ~abcDMA() {}
+    virtual ~abcDMA();
     virtual abcDMA & operator=(const abcDMA &rs);
     virtual void View() const = 0;
 };
@@ -23,7 +23,7 @@ class baseDMA : public abcDMA
 public:
     baseDMA(const char * l = "null", int r = 0) : abcDMA(l, r) {}
     baseDMA(const baseDMA & rs) : abcDMA(rs) {}
-    virtual ~baseDMA();
+    virtual ~baseDMA() {};
     baseDMA & operator=(const baseDMA &rs);
     void View() const;
 };
